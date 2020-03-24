@@ -19,13 +19,21 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             Debug.Log("W presionada");
+<<<<<<< HEAD
             transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * Time.deltaTime * speed;
+=======
+            transform.position += new Vector3(0, 0, Input.GetAxis("Vertical")) * Time.deltaTime * speed;
+>>>>>>> Player
         }
 
         if (Input.GetKey(KeyCode.S))
         {
             Debug.Log("S presionada");
+<<<<<<< HEAD
             transform.position += new Vector3(0, Input.GetAxis("Vertical"), 0) * Time.deltaTime * speed;
+=======
+            transform.position += new Vector3(0, 0, Input.GetAxis("Vertical")) * Time.deltaTime * speed;
+>>>>>>> Player
         }
 
         if (Input.GetKey(KeyCode.D))
