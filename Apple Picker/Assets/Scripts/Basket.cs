@@ -3,15 +3,15 @@
 using System.Collections.Generic;
 
 using UnityEngine;
-
 using UnityEngine.UI;     // This line enables use of uGUI features.        // a
+
+
 
 public class Basket : MonoBehaviour
 {
-
     [Header("Set Dynamically")]
 
-    public Text scoreGT;
+    public Text  scoreGT;
 
     void Start()
     {
@@ -29,6 +29,7 @@ public class Basket : MonoBehaviour
         scoreGT.text = "0";
 
     }
+
 
     void Update()
     {
@@ -60,39 +61,38 @@ public class Basket : MonoBehaviour
         this.transform.position = pos;
 
     }
-
     void OnCollisionEnter(Collision coll)
-    {                         // a
+    {
 
         // Find out what hit this basket
 
-        GameObject collidedWith = coll.gameObject;                    // b
+        GameObject collidedWith = coll.gameObject;
 
         if (collidedWith.tag == "Apple")
-        {                          // c
+        {
 
             Destroy(collidedWith);
 
-        }
+            // Parse the text of the scoreGT into an int
 
-        // Parse the text of the scoreGT into an int
+            int score = int.Parse(scoreGT.text);                          // d
 
-        int score = int.Parse(scoreGT.text);                          // d
+            // Add points for catching the apple
 
-        // Add points for catching the apple
+            score += 100;
 
-        score += 100;
+            // Convert the score back to a string and display it
 
-        // Convert the score back to a string and display it
+            scoreGT.text = score.ToString();
 
-        scoreGT.text = score.ToString();
+            // Track the high score
 
-        // Track the high score
+            if (score > HighScore.score)
+            {
 
-        if (score > HighScore.score)
-        {
+                HighScore.score = score;
 
-            HighScore.score = score;
+            }
 
         }
 

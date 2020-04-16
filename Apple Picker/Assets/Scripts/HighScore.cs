@@ -11,7 +11,9 @@ using UnityEngine.UI;    // Remember, we need this line for uGUI to work.
 public class HighScore : MonoBehaviour
 {
 
-    static public int score = 1000;                                       // a
+    static public int score = 1000;
+
+
 
     void Awake()
     {                                                           // a
@@ -31,8 +33,10 @@ public class HighScore : MonoBehaviour
 
     }
 
+
+
     void Update()
-    {                                                         // b
+    {
 
         Text gt = this.GetComponent<Text>();
 
